@@ -1,6 +1,6 @@
 <script>
-  import firebase from "firebase/app";
-  import "firebase/auth";
+  import firebase from "firebase/compat/app";
+  import "firebase/compat/auth";
 
   export const firebaseConfig = {
     apiKey: "AIzaSyB--fOUZOfaiiHVRQ5mgzjdC0jiGe669lI",

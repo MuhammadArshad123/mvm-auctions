@@ -5,23 +5,22 @@
 <main>
   <div class="signup-box">
     <h1>Sign Up</h1>
-    <h4>DO IR RNNNN</h4>
     <form>
-      <label>First Name</label>
-      <input type="text" placeholder="" />
-      <label>Last Name</label>
-      <input type="text" placeholder="" />
-      <label>Email</label>
-      <input type="email" placeholder="" />
-      <label>Password</label>
-      <input type="password" placeholder="" />
-      <label>Confirm Password</label>
-      <input type="password" placeholder="" />
+      <label for="first-name">First Name</label>
+      <input type="text" id="first-name" placeholder="" />
+      <label for="last-name">Last Name</label>
+      <input type="text" id="last-name" placeholder="" />
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="" />
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="" />
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" placeholder="" />
       <Signupbutton />
       <closeform />
     </form>
     <p>
-      RAHHHHHHHHHHHHHHHHHHHH <br />
+      <br />
       <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
     </p>
   </div>
@@ -42,10 +41,6 @@
   h1 {
     text-align: center;
     padding-top: 15px;
-  }
-
-  h4 {
-    text-align: center;
   }
 
   form {
