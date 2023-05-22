@@ -76,26 +76,29 @@
     </div>
   </section>
 
-  <div class="search-wrapper">
-    <label for="search">Search Products</label>
-    <input
-      type="search"
-      id="search"
-      placeholder="Search..."
-      on:input={handleSearch}
-    />
+  <div class="flex-container">
+    <div class="search-wrapper">
+      <label for="search">Search Products</label>
+      <input
+        type="search"
+        id="search"
+        placeholder="Search..."
+        on:input={handleSearch}
+      />
+    </div>
   </div>
-
   <section id="products">
     <div class="flex-container">
       {#each filteredProducts as product}
-        <Product
-          name={product.name}
-          category={product.category}
-          description={product.description}
-          price={product.price}
-          on:add-to-cart={addToCart}
-        />
+        <div class="product-container">
+          <Product
+            name={product.name}
+            category={product.category}
+            description={product.description}
+            price={product.price}
+            on:add-to-cart={addToCart}
+          />
+        </div>
       {/each}
     </div>
   </section>
@@ -115,7 +118,12 @@
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
-    height: 400px;
+    justify-content: center;
+  }
+
+  .product-container {
+    margin: 10px;
+    margin-bottom: 30px;
   }
 
   .search-wrapper {
@@ -124,5 +132,12 @@
     gap: 0.25rem;
     align-items: center;
     justify-content: center;
+    width: 80%;
+  }
+
+  #search {
+    width: 100%;
+    height: 3rem;
+    font-size: 2rem;
   }
 </style>

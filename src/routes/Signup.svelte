@@ -25,7 +25,7 @@
     </p>
   </div>
   <p class="para-2">
-    Already have an account? <a href="login.svelte">Login here</a>
+    Already have an account? <a href="/login">Login here</a>
   </p>
 </main>
 

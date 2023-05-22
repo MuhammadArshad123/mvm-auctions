@@ -28,7 +28,7 @@
           <h1>{item.name}</h1>
           <p>{item.category}</p>
           <p>{item.description}</p>
-          <p>{item.price}</p>
+          <p>${item.price}</p>
           <button on:click={() => removeFromCart(index)}>Remove</button>
         </div>
       {/each}

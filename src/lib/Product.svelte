@@ -3,6 +3,7 @@
   export let category = "";
   export let description = "";
   export let price = 0;
+  export let link = "";
 
   import { createEventDispatcher } from "svelte";
 
@@ -19,10 +20,11 @@
 
 <main>
   <div class="item">
+    <img src={link} alt="" />
     <h1>{name}</h1>
     <p>{category}</p>
     <p>{description}</p>
-    <p>{price}</p>
+    <p>${price}</p>
     <button class="addToCart" on:click={addToCart}>
       <p>Add to Cart</p>
     </button>
@@ -38,11 +40,9 @@
   }
 
   .item {
-    margin: 2rem;
+    display: flex;
+    flex-direction: column;
     background: #f02c0a33;
-    width: 20em;
-    height: 20em;
-    margin: 100px;
     border-radius: 10px;
     border: 4px;
     border-color: red;
@@ -55,6 +55,7 @@
   }
 
   button {
+    align-self: center;
     margin: 10px;
   }
 </style>

@@ -2,7 +2,7 @@
   <div class="hero">
     <h1>Welcome to My Ecommerce Website!</h1>
     <p>Shop our latest collections and find great deals.</p>
-    <a href="shop.html" class="cta">Shop Now</a>
+    <a href="/items" class="cta">Shop Now</a>
   </div>
   <footer>
     <p>&copy; MVM Sports Auctions.</p>

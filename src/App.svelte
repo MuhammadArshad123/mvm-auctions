@@ -4,9 +4,9 @@
   import Cart from "./routes/Cart.svelte";
   import Items from "./routes/Items.svelte";
   import Signup from "./routes/Signup.svelte";
-
   import firebase from "firebase/compat/app";
   import "firebase/compat/auth";
+  import Login from "./routes/Login.svelte";
 
   export const firebaseConfig = {
     apiKey: "AIzaSyB--fOUZOfaiiHVRQ5mgzjdC0jiGe669lI",
@@ -39,6 +39,7 @@
     <Route path="/cart" component={Cart} />
     <Route path="/items" component={Items} />
     <Route path="/signup" component={Signup} />
+    <Route path="/login" component={Login} />
   </Router>
 </main>
 
@@ -57,7 +58,7 @@
     list-style: none;
   }
 
-  nav li {
+  li {
     margin-left: 1rem;
   }
 </style>
