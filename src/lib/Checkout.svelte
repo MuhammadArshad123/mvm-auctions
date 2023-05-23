@@ -1,4 +1,5 @@
 <script>
+  import { Link } from "svelte-navigator";
   let email = "";
   let firstName = "";
   let lastName = "";
@@ -28,7 +29,7 @@
   <input type="text" placeholder="Zipcode" bind:value={zipcode} />
   <input type="text" placeholder="Phone" bind:value={phone} />
 
-  <button>Complete Order</button>
+  <a href="order-complete"><button> Complete Order</button></a>
 </div>
 
 <style>

@@ -21,7 +21,6 @@
 <main>
   <div class="item">
     <img src={link} alt="" />
-
     <div class="header">
       <h1>{name}</h1>
       <h2>{category}</h2>

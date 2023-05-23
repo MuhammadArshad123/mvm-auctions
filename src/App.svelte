@@ -7,18 +7,7 @@
   import firebase from "firebase/compat/app";
   import "firebase/compat/auth";
   import Login from "./routes/Login.svelte";
-
-  export const firebaseConfig = {
-    apiKey: "AIzaSyB--fOUZOfaiiHVRQ5mgzjdC0jiGe669lI",
-    authDomain: "final-mobile-apps-59a14.firebaseapp.com",
-    projectId: "final-mobile-apps-59a14",
-    storageBucket: "final-mobile-apps-59a14.appspot.com",
-    messagingSenderId: "592657491455",
-    appId: "1:592657491455:web:03d27a57ab0d3bd25333ca",
-    measurementId: "G-C3HFEPBMTP",
-  };
-
-  firebase.initializeApp(firebaseConfig);
+  import OrderComplete from "./routes/OrderComplete.svelte";
 </script>
 
 <main>
@@ -40,6 +29,7 @@
     <Route path="/items" component={Items} />
     <Route path="/signup" component={Signup} />
     <Route path="/login" component={Login} />
+    <Route path="/order-complete" component={OrderComplete} />
   </Router>
 </main>
 
