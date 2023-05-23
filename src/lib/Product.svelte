@@ -21,8 +21,11 @@
 <main>
   <div class="item">
     <img src={link} alt="" />
-    <h1>{name}</h1>
-    <p>{category}</p>
+
+    <div class="header">
+      <h1>{name}</h1>
+      <h2>{category}</h2>
+    </div>
     <p>{description}</p>
     <p>${price}</p>
     <button class="addToCart" on:click={addToCart}>
@@ -47,6 +50,17 @@
     border: 4px;
     border-color: red;
   }
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header h2 {
+    color: darkgray;
+  }
+
   h1 {
     font-size: 2rem;
   }
