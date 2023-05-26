@@ -4,6 +4,8 @@
   import { onMount } from "svelte";
   const sportsAuctionProducts = [
     {
+      imgLink:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Basketball_Clipart.svg/1024px-Basketball_Clipart.svg.png",
       name: "Michael Jordan Autographed Basketball",
       category: "Basketball",
       description:
@@ -12,6 +14,7 @@
     },
     {
       name: "Tom Brady Signed Jersey",
+
       category: "Football",
       description:
         "Authentic New England Patriots jersey signed by Tom Brady, the greatest quarterback of all time.",
@@ -87,57 +90,73 @@
       />
     </div>
   </div>
-  <section id="products">
-    <div class="flex-container">
-      {#each filteredProducts as product}
-        <div class="product-container">
-          <Product
-            name={product.name}
-            category={product.category}
-            description={product.description}
-            price={product.price}
-            on:add-to-cart={addToCart}
-          />
-        </div>
-      {/each}
-    </div>
-  </section>
+
+  <div class="products">
+    {#each filteredProducts as product}
+      <div class="product-container">
+        <Product
+          imgLink={product.imgLink}
+          name={product.name}
+          category={product.category}
+          description={product.description}
+          price={product.price}
+          on:add-to-cart={addToCart}
+        />
+      </div>
+    {/each}
+  </div>
 </main>
 
 <style>
-  .banner {
+  /* Styles for the banner section */
+  #banner {
+    background: linear-gradient(#e66465, #9198e5);
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(#e66465, #9198e5);
-    height: 400px;
-    width: 100%;
   }
 
-  .flex-container {
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  #banner h1 {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 
-  .product-container {
-    margin: 10px;
-    margin-bottom: 30px;
-  }
-
+  /* Styles for the search input */
   .search-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
     align-items: center;
     justify-content: center;
     width: 80%;
+    margin: 20px auto;
+  }
+
+  .search-wrapper label {
+    font-size: 1.2rem;
+    color: #555;
   }
 
   #search {
     width: 100%;
     height: 3rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Styles for the product cards */
+  .products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    width: 80%;
+    margin: 0 auto;
   }
 </style>

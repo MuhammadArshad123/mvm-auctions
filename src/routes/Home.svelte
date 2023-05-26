@@ -1,8 +1,12 @@
+<script>
+  import { Link } from "svelte-navigator";
+</script>
+
 <main>
   <div class="hero">
     <h1>Welcome to My Ecommerce Website!</h1>
     <p>Shop our latest collections and find great deals.</p>
-    <a href="/items" class="cta">Shop Now</a>
+    <button><Link to="items">Shop Now</Link></button>
   </div>
   <footer>
     <p>&copy; MVM Sports Auctions.</p>
@@ -33,27 +37,19 @@
     margin-bottom: 2rem;
   }
 
-  footer {
+  .hero button {
     background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-  }
-
-  .cta {
-    background-color: #fff;
-    color: #333;
     padding: 1rem 2rem;
     border-radius: 0.5rem;
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: bold;
-    transition: all 0.3s ease;
   }
 
-  .cta:hover {
+  footer {
     background-color: #333;
     color: #fff;
-    cursor: pointer;
+    text-align: center;
+    padding: 1rem;
   }
 </style>
