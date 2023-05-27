@@ -1,7 +1,7 @@
 <script>
   import firebase from "firebase/compat/app";
   import "firebase/compat/auth";
-
+  import { navigate } from "svelte-navigator";
   const firebaseConfig = {
     apiKey: "AIzaSyA1yl7xr4j09Wess3two6ZLvxYvPHZf4O4",
     authDomain: "svelte-a5a99.firebaseapp.com",
@@ -24,10 +24,13 @@
     try {
       await firebase.auth().signInWithEmailAndPassword(email, password);
       // User logged in successfully
+
       console.log("User logged in successfully");
+      navigate("/");
     } catch (error) {
       // Handle login error
       console.log(error.message);
+      prompt("Invalid email or password");
     }
   };
 
@@ -41,7 +44,7 @@
   <div class="flex-container">
     <div class="login-wrapper">
       <h1>Login</h1>
-      <form id="loginForm">
+      <form id="loginForm" on:submit|preventDefault={login}>
         <label for="email">Email</label>
         <input type="email" id="email" bind:value={email} required />
         <label for="password">Password</label>

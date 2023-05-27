@@ -3,6 +3,7 @@
   import { onMount } from "svelte";
   import { createEventDispatcher } from "svelte";
   import Checkout from "../lib/Checkout.svelte";
+  import { Link } from "svelte-navigator";
   let cart = [];
 
   const dispatch = createEventDispatcher();
@@ -52,7 +53,7 @@
           Total: ${cart.reduce((acc, item) => acc + item.price, 0)}
         </h1>
         <button class="checkOut" on:click={handleCheckout}
-          ><h2>Checkout</h2></button
+          ><h2><Link to="order-complete">Checkout</Link></h2></button
         >
       </div>
     </div>

@@ -16,10 +16,10 @@
       <div class="logo"><h1>MVM Auctions</h1></div>
       <div class="nav-links">
         <ul class="nav-list">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="cart">Cart</Link></li>
-          <li><Link to="items">Items</Link></li>
-          <li><Link to="signup">Signup</Link></li>
+          <li><Link to="/" class="navLink">Home</Link></li>
+          <li><Link to="cart" class="navLink">Cart</Link></li>
+          <li><Link to="items" class="navLink">Items</Link></li>
+          <li><Link to="signup" class="navLink">Signup</Link></li>
         </ul>
       </div>
     </nav>

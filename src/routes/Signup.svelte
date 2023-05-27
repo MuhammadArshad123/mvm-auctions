@@ -1,6 +1,7 @@
 <script>
   import firebase from "firebase/compat/app";
   import "firebase/compat/auth";
+  import { Link, navigate } from "svelte-navigator";
 
   const firebaseConfig = {
     apiKey: "AIzaSyA1yl7xr4j09Wess3two6ZLvxYvPHZf4O4",
@@ -23,9 +24,11 @@
       await firebase.auth().createUserWithEmailAndPassword(email, password);
       // User signed up successfully
       console.log("User signed up successfully");
+      navigate("/login");
     } catch (error) {
       // Handle signup error
       console.log(error.message);
+      prompt("Invalid email or password");
     }
   };
 </script>
@@ -50,7 +53,9 @@
     </p>
   </div>
   <p class="para-2">
-    Already have an account? <a href="/login">Login here</a>
+    Already have an account? <Link to="/login" class="loginLink">
+      <button class="loginButton"> Login here</button>
+    </Link>
   </p>
 </main>
 
@@ -99,10 +104,6 @@
     font-size: 15px;
     margin-top: -10px;
   }
-  .para-2 a {
-    color: #49c1a2;
-  }
-
   button {
     width: 320px;
     height: 35px;
@@ -111,6 +112,11 @@
     background-color: #49c1a2;
     color: white;
     font-size: 18px;
+  }
+
+  .loginButton {
+    display: inline;
+    width: 120px;
   }
 
   a {
